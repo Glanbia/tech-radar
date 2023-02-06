@@ -141,6 +141,14 @@ radar_visualization({
         },
         {
             "quadrant": 1,
+            "ring": 0,
+            "label": "Azure Data Factory",
+            "active": true,
+            "moved": 0,
+            "link": "https://adf.azure.com/en/home?factory=%2Fsubscriptions%2Fe0bd9b9b-9f13-4d56-99e4-02c967911d1f%2FresourceGroups%2Fbatchstarter-prod01%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2Fadfprod01"
+        },    
+        {
+            "quadrant": 1,
             "ring": 1,
             "label": "MS Logic Apps",
             "active": true,
@@ -210,14 +218,6 @@ radar_visualization({
             "active": true,
             "moved": 0,
             "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Azure Data Factory",
-            "active": true,
-            "moved": 0,
-            "link": "https://adf.azure.com/en/home?factory=%2Fsubscriptions%2Fe0bd9b9b-9f13-4d56-99e4-02c967911d1f%2FresourceGroups%2Fbatchstarter-prod01%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2Fadfprod01"
         },
         {
             "quadrant": 3,
