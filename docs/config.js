@@ -68,6 +68,22 @@ radar_visualization({
             "link": ""
         },
         {
+            "quadrant": 0,
+            "ring": 0,
+            "label": "Spark",
+            "active": true,
+            "moved": 0,
+            "link": ""
+        },
+        {
+            "quadrant": 0,
+            "ring": 2,
+            "label": "Great Expectations",
+            "active": true,
+            "moved": 0,
+            "link": "https://greatexpectations.io/"
+        },
+        {
             "quadrant": 1,
             "ring": 1,
             "label": "Azure Functions",
@@ -98,78 +114,6 @@ radar_visualization({
             "active": true,
             "moved": 0,
             "link": "https://github.com/Glanbia"
-        },
-        {
-            "quadrant": 2,
-            "ring": 1,
-            "label": "Azure SQL Database",
-            "active": true,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/sql-database"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "Azure Blob storage",
-            "active": true,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/storage/blobs"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "Databricks Catalog",
-            "active": true,
-            "moved": 0,
-            "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "MS SharePoint",
-            "active": true,
-            "moved": 0,
-            "link": "https://glanbia.sharepoint.com/sites/INT-GBS-ITDataAnalytics"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Databricks",
-            "active": true,
-            "moved": 0,
-            "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
-        },
-        {
-            "quadrant": 0,
-            "ring": 0,
-            "label": "Spark",
-            "active": true,
-            "moved": 0,
-            "link": ""
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Azure Data Factory",
-            "active": true,
-            "moved": 0,
-            "link": "https://adf.azure.com/en/home?factory=%2Fsubscriptions%2Fe0bd9b9b-9f13-4d56-99e4-02c967911d1f%2FresourceGroups%2Fbatchstarter-prod01%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2Fadfprod01"
-        },
-        {
-            "quadrant": 3,
-            "ring": 2,
-            "label": "Azure Data Explorer",
-            "active": true,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/data-explorer"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Tableau",
-            "active": true,
-            "moved": 0,
-            "link": "https://us-east-1.online.tableau.com/#/site/glanbiaanalytics?:isFromSaml=y"
         },
         {
             "quadrant": 1,
@@ -204,20 +148,12 @@ radar_visualization({
             "link": "https://azure.microsoft.com/services/logic-apps"
         },
         {
-            "quadrant": 0,
+            "quadrant": 1,
             "ring": 2,
             "label": "OpenTelemetry",
             "active": false,
             "moved": 0,
             "link": "https://opentelemetry.io/"
-        },
-        {
-            "quadrant": 0,
-            "ring": 2,
-            "label": "Great Expectations",
-            "active": true,
-            "moved": 0,
-            "link": "https://greatexpectations.io/"
         },
         {
             "quadrant": 1,
@@ -226,6 +162,110 @@ radar_visualization({
             "active": true,
             "moved": 0,
             "link": "https://azure.microsoft.com/services/key-vault"
+        },
+        {
+            "quadrant": 2,
+            "ring": 1,
+            "label": "Azure SQL Database",
+            "active": true,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/services/sql-database"
+        },
+        {
+            "quadrant": 2,
+            "ring": 0,
+            "label": "Azure Blob storage",
+            "active": true,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/services/storage/blobs"
+        },
+        {
+            "quadrant": 2,
+            "ring": 0,
+            "label": "Databricks SQL",
+            "active": true,
+            "moved": 0,
+            "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
+        },
+        {
+            "quadrant": 2,
+            "ring": 0,
+            "label": "MS SharePoint",
+            "active": true,
+            "moved": 0,
+            "link": "https://glanbia.sharepoint.com/sites/INT-GBS-ITDataAnalytics"
+        },
+        {
+            "quadrant": 2,
+            "ring": 2,
+            "label": "Azure File Sync",
+            "active": true,
+            "moved": 0,
+            "link": "https://learn.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning"
+        },
+        {
+            "quadrant": 3,
+            "ring": 0,
+            "label": "Databricks",
+            "active": true,
+            "moved": 0,
+            "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
+        },
+        {
+            "quadrant": 3,
+            "ring": 0,
+            "label": "Azure Data Factory",
+            "active": true,
+            "moved": 0,
+            "link": "https://adf.azure.com/en/home?factory=%2Fsubscriptions%2Fe0bd9b9b-9f13-4d56-99e4-02c967911d1f%2FresourceGroups%2Fbatchstarter-prod01%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2Fadfprod01"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Azure Data Explorer",
+            "active": false,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/services/data-explorer"
+        },
+        {
+            "quadrant": 3,
+            "ring": 0,
+            "label": "Tableau",
+            "active": true,
+            "moved": 0,
+            "link": "https://us-east-1.online.tableau.com/#/site/glanbiaanalytics?:isFromSaml=y"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Azure Purview",
+            "active": false,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/services/purview"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Azure Data Catalog",
+            "active": false,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/en-us/products/data-catalog"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Unity Catalog",
+            "active": false,
+            "moved": 0,
+            "link": "https://www.databricks.com/product/unity-catalog"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Alteryx",
+            "active": false,
+            "moved": 0,
+            "link": "https://www.alteryx.com/alteryx-analytics-automation-platform"
         }
     ]
     //ENTRIES
