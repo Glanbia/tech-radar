@@ -261,7 +261,7 @@ radar_visualization({
         },
         {
             "quadrant": 3,
-            "ring": 2,
+            "ring": 1,
             "label": "Alteryx",
             "active": false,
             "moved": 0,
