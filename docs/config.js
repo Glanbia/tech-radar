@@ -237,11 +237,11 @@ radar_visualization({
         },
         {
             "quadrant": 3,
-            "ring": 2,
+            "ring": 1,
             "label": "Azure Purview",
             "active": false,
             "moved": 0,
-            "link": "https://azure.microsoft.com/services/purview"
+            "link": "https://web.purview.azure.com/resource/prvprod01/main/catalog/home?feature.tenant=865c00b5-ed13-4bd3-b214-de46635aeec8"
         },
         {
             "quadrant": 3,
