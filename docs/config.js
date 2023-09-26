@@ -245,19 +245,19 @@ radar_visualization({
         },
         {
             "quadrant": 3,
-            "ring": 2,
+            "ring": 0,
             "label": "Tableau",
             "active": true,
             "moved": 0,
-            "link": "https://powerbi.microsoft.com/"
+            "link": "https://us-east-1.online.tableau.com/#/site/glanbiaanalytics?:isFromSaml=y"
         },
         {
             "quadrant": 3,
-            "ring": 0,
+            "ring": 2,
             "label": "Power BI",
             "active": true,
             "moved": 0,
-            "link": "https://us-east-1.online.tableau.com/#/site/glanbiaanalytics?:isFromSaml=y"
+            "link": "https://powerbi.microsoft.com/"
         },
         {
             "quadrant": 3,
