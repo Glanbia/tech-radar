@@ -8,7 +8,7 @@ radar_visualization({
         inactive: "#ddd"
     },
     title: "Glanbia Tech Radar",
-    date: "2023.02",
+    date: "2023.09",
     quadrants: [{
             name: "Languages & Frameworks"
         },
@@ -58,6 +58,14 @@ radar_visualization({
             "active": true,
             "moved": 0,
             "link": ""
+        },
+        {
+            "quadrant": 0,
+            "ring": 0,
+            "label": "HQL",
+            "active": true,
+            "moved": 0,
+            "link": "https://spark.apache.org/docs/latest/sql-ref.html"
         },
         {
             "quadrant": 0,
@@ -142,6 +150,14 @@ radar_visualization({
         {
             "quadrant": 1,
             "ring": 0,
+            "label": "Fivetran",
+            "active": true,
+            "moved": 0,
+            "link": "https://fivetran.com/login?next=%2Fdashboard%2Fconnectors"
+        },
+        {
+            "quadrant": 1,
+            "ring": 0,
             "label": "Azure Data Factory",
             "active": true,
             "moved": 0,
@@ -149,10 +165,10 @@ radar_visualization({
         },    
         {
             "quadrant": 1,
-            "ring": 1,
+            "ring": 0,
             "label": "MS Logic Apps",
             "active": true,
-            "moved": 0,
+            "moved": 1,
             "link": "https://azure.microsoft.com/services/logic-apps"
         },
         {
@@ -165,10 +181,10 @@ radar_visualization({
         },
         {
             "quadrant": 1,
-            "ring": 1,
+            "ring": 0,
             "label": "Azure Key Vault",
             "active": true,
-            "moved": 0,
+            "moved": 1,
             "link": "https://azure.microsoft.com/services/key-vault"
         },
         {
@@ -229,8 +245,16 @@ radar_visualization({
         },
         {
             "quadrant": 3,
-            "ring": 0,
+            "ring": 2,
             "label": "Tableau",
+            "active": true,
+            "moved": 0,
+            "link": "https://powerbi.microsoft.com/"
+        },
+        {
+            "quadrant": 3,
+            "ring": 0,
+            "label": "Power BI",
             "active": true,
             "moved": 0,
             "link": "https://us-east-1.online.tableau.com/#/site/glanbiaanalytics?:isFromSaml=y"
@@ -239,9 +263,9 @@ radar_visualization({
             "quadrant": 3,
             "ring": 1,
             "label": "Azure Purview",
-            "active": false,
+            "active": true,
             "moved": 0,
-            "link": "https://web.purview.azure.com/resource/prvprod01/main/catalog/home?feature.tenant=865c00b5-ed13-4bd3-b214-de46635aeec8"
+            "link": "https://web.purview.azure.com/resource/prvprod01/?feature.tenant=865c00b5-ed13-4bd3-b214-de46635aeec8"
         },
         {
             "quadrant": 3,
@@ -253,10 +277,10 @@ radar_visualization({
         },
         {
             "quadrant": 3,
-            "ring": 2,
+            "ring": 0,
             "label": "Unity Catalog",
-            "active": false,
-            "moved": 0,
+            "active": true,
+            "moved": 1,
             "link": "https://www.databricks.com/product/unity-catalog"
         },
         {
