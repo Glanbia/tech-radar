@@ -153,7 +153,7 @@ radar_visualization({
             "label": "Fivetran",
             "active": true,
             "moved": 0,
-            "link": "https://fivetran.com/login?next=%2Fdashboard%2Fconnectors"
+            "link": "https://launcher.myapps.microsoft.com/api/signin/d874d0b8-55ce-45c5-a8e9-7b5d08dcaf53?tenantId=865c00b5-ed13-4bd3-b214-de46635aeec8"
         },
         {
             "quadrant": 1,
