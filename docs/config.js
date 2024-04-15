@@ -85,10 +85,10 @@ radar_visualization({
         },
         {
             "quadrant": 0,
-            "ring": 2,
+            "ring": 3,
             "label": "Great Expectations",
             "active": true,
-            "moved": 0,
+            "moved": 1,
             "link": "https://greatexpectations.io/"
         },
         {
@@ -261,10 +261,10 @@ radar_visualization({
         },
         {
             "quadrant": 3,
-            "ring": 1,
+            "ring": 0,
             "label": "Azure Purview",
             "active": true,
-            "moved": 0,
+            "moved": 1,
             "link": "https://web.purview.azure.com/resource/prvprod01/?feature.tenant=865c00b5-ed13-4bd3-b214-de46635aeec8"
         },
         {
@@ -290,6 +290,22 @@ radar_visualization({
             "active": false,
             "moved": 0,
             "link": "https://www.alteryx.com/alteryx-analytics-automation-platform"
+        },
+        {
+            "quadrant": 0,
+            "ring": 1,
+            "label": "Azure Open AI",
+            "active": false,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/en-us/products/ai-services/openai-service"
+        },
+        {
+            "quadrant": 0,
+            "ring": 1,
+            "label": "DBRX",
+            "active": false,
+            "moved": 0,
+            "link": "https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm"
         }
     ]
     //ENTRIES
