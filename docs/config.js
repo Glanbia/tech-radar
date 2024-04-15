@@ -88,7 +88,7 @@ radar_visualization({
             "ring": 3,
             "label": "Great Expectations",
             "active": true,
-            "moved": 1,
+            "moved": -1,
             "link": "https://greatexpectations.io/"
         },
         {
