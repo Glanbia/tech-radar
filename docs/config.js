@@ -8,7 +8,7 @@ radar_visualization({
         inactive: "#ddd"
     },
     title: "Glanbia Tech Radar",
-    date: "2023.09",
+    date: "2024.04",
     quadrants: [{
             name: "Languages & Frameworks"
         },
