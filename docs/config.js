@@ -3,7 +3,7 @@ radar_visualization({
     width: 1450,
     height: 1000,
     colors: {
-        background: "#14141f",
+        background: "#292524",
         grid: '#999',
         inactive: "#ddd"
     },
