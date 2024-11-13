@@ -1,3 +1,4 @@
+[![pages-build-deployment](https://github.com/Glanbia/tech-radar/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/Glanbia/tech-radar/actions/workflows/pages/pages-build-deployment)
 # Motivation
 
 At [GBS](https://www.glanbia.com/), we maintain a [public Tech
