@@ -228,6 +228,22 @@ radar_visualization({
             "link": "https://learn.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning"
         },
         {
+            "quadrant": 2,
+            "ring": 0,
+            "label": "Azure AI Search",
+            "active": true,
+            "moved": 0,
+            "link": "https://learn.microsoft.com/en-us/azure/search"
+        },
+        {
+            "quadrant": 2,
+            "ring": 1,
+            "label": "ChromaDB",
+            "active": true,
+            "moved": 0,
+            "link": "https://www.trychroma.com"
+        },
+        {
             "quadrant": 3,
             "ring": 0,
             "label": "Databricks",
@@ -274,6 +290,62 @@ radar_visualization({
             "active": false,
             "moved": 0,
             "link": "https://azure.microsoft.com/en-us/products/data-catalog"
+        },
+        {
+            "quadrant": 3,
+            "ring": 1,
+            "label": "Azure AI Document Intelligence",
+            "active": true,
+            "moved": 0,
+            "link": "https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence"
+        },
+        {
+            "quadrant": 1,
+            "ring": 1,
+            "label": "Azure AI Foundry",
+            "active": true,
+            "moved": 1,
+            "link": "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Langchain",
+            "active": true,
+            "moved": 0,
+            "link": "https://www.langchain.com/"
+        },
+        {
+            "quadrant": 3,
+            "ring": 2,
+            "label": "Streamlit",
+            "active": true,
+            "moved": 0,
+            "link": "https://streamlit.io/"
+        },
+        {
+            "quadrant": 3,
+            "ring": 1,
+            "label": "Gradio",
+            "active": true,
+            "moved": 0,
+            "link": "https://www.gradio.app/"
+        },
+        {
+            "quadrant": 3,
+            "ring": 1,
+            "label": "FastAPI",
+            "active": true,
+            "moved": 0,
+            "link": "https://fastapi.tiangolo.com/"
+        },
+        {
+            "quadrant": 1,
+            "ring": 2,
+            "label": "Databricks Apps",
+            "active": true,
+            "moved": 0,
+            "link": "https://www.databricks.com/product/databricks-apps"
         },
         {
             "quadrant": 3,
