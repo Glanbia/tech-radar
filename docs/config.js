@@ -142,10 +142,10 @@ radar_visualization({
         {
             "quadrant": 1,
             "ring": 0,
-            "label": "Asana",
+            "label": "MS Planner",
             "active": true,
             "moved": 0,
-            "link": "https://app.asana.com/0/1201432048659573/board"
+            "link": "https://planner.cloud.microsoft/webui/plan/ggUOpjgBZkuMx-Lcm4n-iJYAE11f/view/board?tid=865c00b5-ed13-4bd3-b214-de46635aeec8"
         },
         {
             "quadrant": 1,
@@ -277,6 +277,14 @@ radar_visualization({
         },
         {
             "quadrant": 3,
+            "ring": 2,
+            "label": "Databricks AI/BI",
+            "active": true,
+            "moved": 0,
+            "link": "https://www.databricks.com/product/business-intelligence"
+        },
+        {
+            "quadrant": 3,
             "ring": 0,
             "label": "Azure Purview",
             "active": true,
@@ -292,15 +300,15 @@ radar_visualization({
             "link": "https://azure.microsoft.com/en-us/products/data-catalog"
         },
         {
-            "quadrant": 3,
+            "quadrant": 1,
             "ring": 1,
-            "label": "Azure AI Document Intelligence",
+            "label": "Azure Document Intelligence",
             "active": true,
             "moved": 0,
             "link": "https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence"
         },
         {
-            "quadrant": 1,
+            "quadrant": 3,
             "ring": 1,
             "label": "Azure AI Foundry",
             "active": true,
@@ -308,7 +316,7 @@ radar_visualization({
             "link": "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry"
         },
         {
-            "quadrant": 3,
+            "quadrant": 0,
             "ring": 2,
             "label": "Langchain",
             "active": true,
@@ -316,7 +324,7 @@ radar_visualization({
             "link": "https://www.langchain.com/"
         },
         {
-            "quadrant": 3,
+            "quadrant": 1,
             "ring": 2,
             "label": "Streamlit",
             "active": true,
@@ -324,7 +332,7 @@ radar_visualization({
             "link": "https://streamlit.io/"
         },
         {
-            "quadrant": 3,
+            "quadrant": 1,
             "ring": 1,
             "label": "Gradio",
             "active": true,
@@ -332,7 +340,7 @@ radar_visualization({
             "link": "https://www.gradio.app/"
         },
         {
-            "quadrant": 3,
+            "quadrant": 1,
             "ring": 1,
             "label": "FastAPI",
             "active": true,
