@@ -1,16 +1,29 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 2015,
-        "sourceType": "module"
-    },
-    "rules": {
-        "no-redeclare": "off",
-        "no-undef": "off",
-        "no-unused-vars": "off"
-    }
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "script"
+  },
+  "globals": {
+    "d3": "readonly",
+    "radar_visualization": "writable"
+  },
+  "rules": {
+    "no-redeclare": "warn",
+    "no-undef": "error",
+    "no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+    }],
+    "semi": ["error", "always"],
+    "quotes": ["warn", "double", { "avoidEscape": true }],
+    "indent": ["warn", 2, { "SwitchCase": 1 }],
+    "no-console": "off",
+    "no-var": "warn",
+    "prefer-const": "warn"
+  }
 }
