@@ -10,7 +10,7 @@ A modern, interactive technology radar visualization built with D3.js v7 to help
 
 At [Glanbia Business Services](https://www.glanbia.com/), we maintain a public Tech Radar to help our engineering teams align on technology choices. It provides a visual and structured way to discuss technology strategy.
 
-This project is inspired by the [pioneering work by ThoughtWorks](https://www.thoughtworks.com/radar).
+This project is inspired by the [work by ThoughtWorks](https://www.thoughtworks.com/radar).
 
 ## Features
 
@@ -54,7 +54,7 @@ yarn start
 
 ## Adding or Updating Technologies
 
-All technology entries are managed in [`docs/config.js`](/docs/config.js). The file is well-documented with clear instructions.
+All technology entries are managed in [`docs/config.js`](/docs/config.js) or the [`docs/technologies.csv`](/docs/technologies.csv). The file is well-documented with clear instructions.
 
 ### Quick Guide
 
@@ -157,13 +157,6 @@ radar_visualization({
 - **Browser Sync** - Development server with live reload
 - **ESLint** - Code quality
 
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
 ## Accessibility
 
 This radar includes:
@@ -182,8 +175,6 @@ This radar includes:
 5. Commit your changes (`git commit -am 'Add improvement'`)
 6. Push to the branch (`git push origin feature/improvement`)
 7. Create a Pull Request
-
-## API Reference
 
 ### `radar_visualization(config)`
 
@@ -219,8 +210,8 @@ MIT License - see [LICENSE.txt](LICENSE.txt)
 
 For issues or questions:
 - Open an issue on [GitHub](https://github.com/glanbia/tech-radar/issues)
-- Contact the GBS Engineering Team
+- Contact the GES Engineering Team
 
 ---
 
-**Last Updated:** 2024.04
+**Last Updated:** 2025.01
