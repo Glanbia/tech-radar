@@ -1,392 +1,148 @@
-radar_visualization({
+/**
+ * GLANBIA TECHNOLOGY RADAR CONFIGURATION
+ * ======================================
+ *
+ * This configuration now loads technology entries from technologies.csv
+ * for easier maintenance and updates.
+ *
+ * CSV FORMAT:
+ * Quadrant,Ring,Label,Active,Moved,Link
+ *
+ * QUADRANTS:
+ * - Languages & Frameworks
+ * - Infrastructure & Tools
+ * - Datastores
+ * - Data Management
+ *
+ * RINGS:
+ * - ADOPT: High confidence, widely used
+ * - TRIAL: Proven success, some risk
+ * - ASSESS: Promising, worth investigating
+ * - HOLD: Not recommended for new projects
+ *
+ * MOVEMENT:
+ * - 1: Moved IN (improved position, triangle up ▲)
+ * - 0: No change (circle ●)
+ * - -1: Moved OUT (downgraded, triangle down ▼)
+ */
+
+// =============================================================================
+// CSV LOADER
+// =============================================================================
+
+/**
+ * Parses CSV data and converts it to radar entries
+ */
+function parseCSV(csvText) {
+  const lines = csvText.trim().split('\n');
+  const headers = lines[0].split(',');
+
+  // Define quadrant and ring mappings
+  const quadrantMap = {
+    'Languages & Frameworks': 0,
+    'Infrastructure & Tools': 1,
+    'Datastores': 2,
+    'Data Management': 3
+  };
+
+  const ringMap = {
+    'ADOPT': 0,
+    'TRIAL': 1,
+    'ASSESS': 2,
+    'HOLD': 3
+  };
+
+  const entries = [];
+
+  // Skip header row and process data rows
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    const values = line.split(',');
+
+    const entry = {
+      quadrant: quadrantMap[values[0]],
+      ring: ringMap[values[1]],
+      label: values[2],
+      active: values[3] === 'true',
+      moved: parseInt(values[4]),
+      link: values[5] || ''
+    };
+
+    entries.push(entry);
+  }
+
+  return entries;
+}
+
+/**
+ * Loads technologies from CSV file
+ */
+async function loadTechnologies() {
+  try {
+    const response = await fetch('technologies.csv');
+    const csvText = await response.text();
+    return parseCSV(csvText);
+  } catch (error) {
+    console.error('Error loading technologies.csv:', error);
+    return [];
+  }
+}
+
+// =============================================================================
+// RADAR INITIALIZATION
+// =============================================================================
+
+/**
+ * Initialize the radar visualization
+ */
+async function initializeRadar() {
+  const entries = await loadTechnologies();
+
+  radar_visualization({
     svg_id: "radar",
     width: 1450,
     height: 1000,
+
+    // Color scheme
     colors: {
-        background: "#0b0f19",
-        grid: '#999',
-        inactive: "#ddd"
+      background: "#0a0e1a",
+      grid: "#2a3040",
+      inactive: "#ddd"
     },
+
+    // Radar metadata
     title: "Glanbia Tech Radar",
-    date: "2024.04",
-    quadrants: [{
-            name: "Languages & Frameworks"
-        },
-        {
-            name: "Infrastructure & Tools"
-        },
-        {
-            name: "Datastores"
-        },
-        {
-            name: "Data Management"
-        },
+    date: "2026.01",
+
+    // Quadrant names (clockwise from bottom-right)
+    quadrants: [
+      { name: "Languages & Frameworks" },
+      { name: "Infrastructure & Tools" },
+      { name: "Datastores" },
+      { name: "Data Management" }
     ],
-    rings: [{
-            name: "ADOPT",
-            color: "#5ba300"
-        },
-        {
-            name: "TRIAL",
-            color: "#009eb0"
-        },
-        {
-            name: "ASSESS",
-            color: "#c7ba00"
-        },
-        {
-            name: "HOLD",
-            color: "#e09b96"
-        }
+
+    // Ring definitions (from center outward)
+    rings: [
+      { name: "ADOPT", color: "#5ba300" },
+      { name: "TRIAL", color: "#009eb0" },
+      { name: "ASSESS", color: "#c7ba00" },
+      { name: "HOLD", color: "#e09b96" }
     ],
+
     print_layout: true,
     links_in_new_tabs: true,
-    // zoomed_quadrant: 0,
-    //ENTRIES
-    entries: [{
-            "quadrant": 0,
-            "ring": 0,
-            "label": "Python",
-            "active": true,
-            "moved": 0,
-            "link": ""
-        },
-        {
-            "quadrant": 0,
-            "ring": 0,
-            "label": "R",
-            "active": true,
-            "moved": 0,
-            "link": ""
-        },
-        {
-            "quadrant": 0,
-            "ring": 0,
-            "label": "HQL",
-            "active": true,
-            "moved": 0,
-            "link": "https://spark.apache.org/docs/latest/sql-ref.html"
-        },
-        {
-            "quadrant": 0,
-            "ring": 2,
-            "label": "Scala",
-            "active": true,
-            "moved": 0,
-            "link": ""
-        },
-        {
-            "quadrant": 0,
-            "ring": 0,
-            "label": "Spark",
-            "active": true,
-            "moved": 0,
-            "link": ""
-        },
-        {
-            "quadrant": 0,
-            "ring": 3,
-            "label": "Great Expectations",
-            "active": true,
-            "moved": -1,
-            "link": "https://greatexpectations.io/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "Azure Functions",
-            "active": false,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/functions"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "Azure Machine Learning",
-            "active": false,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/machine-learning-services"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "Azure Devops",
-            "active": false,
-            "moved": 0,
-            "link": "https://dev.azure.com/glanbia/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "GitHub",
-            "active": true,
-            "moved": 0,
-            "link": "https://github.com/Glanbia"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "MS PowerAutomate",
-            "active": true,
-            "moved": 0,
-            "link": "https://powerautomate.microsoft.com/en-us/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "MS Teams",
-            "active": true,
-            "moved": 0,
-            "link": "https://www.microsoft.com/en-ie/microsoft-teams/log-in"
-        },
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "MS Planner",
-            "active": true,
-            "moved": 0,
-            "link": "https://planner.cloud.microsoft/webui/plan/ggUOpjgBZkuMx-Lcm4n-iJYAE11f/view/board?tid=865c00b5-ed13-4bd3-b214-de46635aeec8"
-        },
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "Fivetran",
-            "active": true,
-            "moved": 0,
-            "link": "https://launcher.myapps.microsoft.com/api/signin/d874d0b8-55ce-45c5-a8e9-7b5d08dcaf53?tenantId=865c00b5-ed13-4bd3-b214-de46635aeec8"
-        },
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "Azure Data Factory",
-            "active": true,
-            "moved": 0,
-            "link": "https://adf.azure.com/en/home?factory=%2Fsubscriptions%2Fe0bd9b9b-9f13-4d56-99e4-02c967911d1f%2FresourceGroups%2Fbatchstarter-prod01%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2Fadfprod01"
-        },    
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "MS Logic Apps",
-            "active": true,
-            "moved": 1,
-            "link": "https://azure.microsoft.com/services/logic-apps"
-        },
-        {
-            "quadrant": 1,
-            "ring": 2,
-            "label": "OpenTelemetry",
-            "active": false,
-            "moved": 0,
-            "link": "https://opentelemetry.io/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 0,
-            "label": "Azure Key Vault",
-            "active": true,
-            "moved": 1,
-            "link": "https://azure.microsoft.com/services/key-vault"
-        },
-        {
-            "quadrant": 2,
-            "ring": 1,
-            "label": "Azure SQL Database",
-            "active": true,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/sql-database"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "Azure Blob storage",
-            "active": true,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/storage/blobs"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "Databricks SQL",
-            "active": true,
-            "moved": 0,
-            "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "MS SharePoint",
-            "active": true,
-            "moved": 0,
-            "link": "https://glanbia.sharepoint.com/sites/INT-GBS-ITDataAnalytics"
-        },
-        {
-            "quadrant": 2,
-            "ring": 2,
-            "label": "Azure File Sync",
-            "active": true,
-            "moved": 0,
-            "link": "https://learn.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning"
-        },
-        {
-            "quadrant": 2,
-            "ring": 0,
-            "label": "Azure AI Search",
-            "active": true,
-            "moved": 0,
-            "link": "https://learn.microsoft.com/en-us/azure/search"
-        },
-        {
-            "quadrant": 2,
-            "ring": 1,
-            "label": "ChromaDB",
-            "active": true,
-            "moved": 0,
-            "link": "https://www.trychroma.com"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Databricks",
-            "active": true,
-            "moved": 0,
-            "link": "https://adb-1334844506153603.3.azuredatabricks.net/"
-        },
-        {
-            "quadrant": 3,
-            "ring": 2,
-            "label": "Azure Data Explorer",
-            "active": false,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/services/data-explorer"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Tableau",
-            "active": true,
-            "moved": 0,
-            "link": "https://us-east-1.online.tableau.com/#/site/glanbiaanalytics?:isFromSaml=y"
-        },
-        {
-            "quadrant": 3,
-            "ring": 2,
-            "label": "Power BI",
-            "active": true,
-            "moved": 0,
-            "link": "https://powerbi.microsoft.com/"
-        },
-        {
-            "quadrant": 3,
-            "ring": 2,
-            "label": "Databricks AI/BI",
-            "active": true,
-            "moved": 0,
-            "link": "https://www.databricks.com/product/business-intelligence"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Azure Purview",
-            "active": true,
-            "moved": 1,
-            "link": "https://web.purview.azure.com/resource/prvprod01/?feature.tenant=865c00b5-ed13-4bd3-b214-de46635aeec8"
-        },
-        {
-            "quadrant": 3,
-            "ring": 2,
-            "label": "Azure Data Catalog",
-            "active": false,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/en-us/products/data-catalog"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "Azure Document Intelligence",
-            "active": true,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence"
-        },
-        {
-            "quadrant": 3,
-            "ring": 1,
-            "label": "Azure AI Foundry",
-            "active": true,
-            "moved": 1,
-            "link": "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry"
-        },
-        {
-            "quadrant": 0,
-            "ring": 2,
-            "label": "Langchain",
-            "active": true,
-            "moved": 0,
-            "link": "https://www.langchain.com/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 2,
-            "label": "Streamlit",
-            "active": true,
-            "moved": 0,
-            "link": "https://streamlit.io/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "Gradio",
-            "active": true,
-            "moved": 0,
-            "link": "https://www.gradio.app/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 1,
-            "label": "FastAPI",
-            "active": true,
-            "moved": 0,
-            "link": "https://fastapi.tiangolo.com/"
-        },
-        {
-            "quadrant": 1,
-            "ring": 2,
-            "label": "Databricks Apps",
-            "active": true,
-            "moved": 0,
-            "link": "https://www.databricks.com/product/databricks-apps"
-        },
-        {
-            "quadrant": 3,
-            "ring": 0,
-            "label": "Unity Catalog",
-            "active": true,
-            "moved": 1,
-            "link": "https://www.databricks.com/product/unity-catalog"
-        },
-        {
-            "quadrant": 3,
-            "ring": 1,
-            "label": "Alteryx",
-            "active": false,
-            "moved": 0,
-            "link": "https://www.alteryx.com/alteryx-analytics-automation-platform"
-        },
-        {
-            "quadrant": 0,
-            "ring": 1,
-            "label": "Azure Open AI",
-            "active": false,
-            "moved": 0,
-            "link": "https://azure.microsoft.com/en-us/products/ai-services/openai-service"
-        },
-        {
-            "quadrant": 0,
-            "ring": 1,
-            "label": "DBRX",
-            "active": false,
-            "moved": 0,
-            "link": "https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm"
-        }
-    ]
-    //ENTRIES
-});
+
+    // Technology entries loaded from CSV
+    entries: entries
+  });
+}
+
+// Initialize the radar when the DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeRadar);
+} else {
+  initializeRadar();
+}
