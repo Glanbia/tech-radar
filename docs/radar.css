@@ -1,26 +1,326 @@
+:root {
+  /* Modern Color Palette */
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #0f1420;
+  --bg-gradient-start: #0a0e1a;
+  --bg-gradient-end: #1a1f35;
+
+  --text-primary: #e4e6eb;
+  --text-secondary: #b8bec9;
+  --text-muted: #8b92a0;
+
+  --accent-adopt: #5ba300;
+  --accent-trial: #009eb0;
+  --accent-assess: #c7ba00;
+  --accent-hold: #e09b96;
+
+  --grid-color: #2a3040;
+  --grid-highlight: #3a4050;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(90, 163, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Source Sans Pro', arial, helvetica, sans-serif;
-  padding-bottom: 50px;
-  background: #0b0f19;
-  zoom:80%;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: var(--spacing-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Modern container for radar */
+#radar {
+  display: block;
+  margin: 0 auto var(--spacing-lg) auto;
+  filter: drop-shadow(var(--shadow-lg));
+  transition: transform var(--transition-normal);
+}
+
+#radar:hover {
+  transform: scale(1.01);
+}
+
+/* Content Container */
+.content-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-sm);
+}
+
 h3 {
-  margin-top: 50px;
-  color: #999;
+  margin-top: var(--spacing-xl);
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  position: relative;
+  padding-bottom: var(--spacing-sm);
 }
+
+h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-adopt), var(--accent-trial));
+  border-radius: 2px;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.05rem;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
 li {
-  margin: 25px 50px 0 0;
-  color: #999;
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-lg);
+  position: relative;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
 }
+
+li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-adopt);
+  font-weight: bold;
+  transition: transform var(--transition-fast);
+}
+
+li:hover {
+  color: var(--text-primary);
+}
+
+li:hover::before {
+  transform: translateX(4px);
+}
+
+li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Modern Card Layout */
 table {
   width: 100%;
-  margin: 0 50px 0 50px;
-  color: #999;
-  text-align: justify;
+  max-width: 1400px;
+  margin: var(--spacing-lg) auto;
+  border-collapse: separate;
+  border-spacing: var(--spacing-md);
 }
+
 td {
-  width: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
   vertical-align: top;
-  padding-right: 60px;
-  color: #999;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+td:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Ring Status Badges */
+.ring-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ring-adopt {
+  background: rgba(91, 163, 0, 0.2);
+  color: var(--accent-adopt);
+  border: 1px solid var(--accent-adopt);
+}
+
+.ring-trial {
+  background: rgba(0, 158, 176, 0.2);
+  color: var(--accent-trial);
+  border: 1px solid var(--accent-trial);
+}
+
+.ring-assess {
+  background: rgba(199, 186, 0, 0.2);
+  color: var(--accent-assess);
+  border: 1px solid var(--accent-assess);
+}
+
+.ring-hold {
+  background: rgba(224, 155, 150, 0.2);
+  color: var(--accent-hold);
+  border: 1px solid var(--accent-hold);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  body {
+    padding: var(--spacing-sm);
+  }
+
+  table {
+    border-spacing: var(--spacing-sm);
+  }
+
+  td {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+  }
+
+  tr {
+    display: block;
+  }
+
+  td {
+    display: block;
+    width: 100% !important;
+    margin-bottom: var(--spacing-md);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  #radar {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grid-color);
+  border-radius: 5px;
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grid-highlight);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-adopt);
+  outline-offset: 2px;
+}
+
+/* Link styles */
+a {
+  color: var(--accent-trial);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-adopt);
+  text-decoration: underline;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-adopt);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--accent-adopt);
+  color: white;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-container {
+  animation: fadeIn var(--transition-slow) ease-out;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  td {
+    background: white;
+    border: 1px solid #ddd;
+  }
 }
