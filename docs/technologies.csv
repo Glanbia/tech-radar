@@ -16,29 +16,29 @@ Infrastructure & Tools,ADOPT,Azure Data Factory,true,0,https://azure.microsoft.c
 Infrastructure & Tools,ADOPT,MS Logic Apps,true,1,https://azure.microsoft.com/services/logic-apps
 Infrastructure & Tools,ADOPT,Azure Key Vault,true,1,https://azure.microsoft.com/services/key-vault
 Infrastructure & Tools,TRIAL,Azure Functions,true,0,https://azure.microsoft.com/services/functions
-Infrastructure & Tools,TRIAL,Azure Machine Learning,true,0,https://azure.microsoft.com/services/machine-learning-services
+Infrastructure & Tools,HOLD,Azure Machine Learning,true,1,https://azure.microsoft.com/services/machine-learning-services
 Infrastructure & Tools,TRIAL,Azure Devops,true,0,https://azure.microsoft.com/en-us/products/devops
-Infrastructure & Tools,TRIAL,MS PowerAutomate,true,0,https://powerautomate.microsoft.com/en-us/
+Infrastructure & Tools,ADOPT,MS PowerAutomate,true,1,https://powerautomate.microsoft.com/en-us/
 Infrastructure & Tools,TRIAL,Azure Document Intelligence,true,0,https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence
 Infrastructure & Tools,TRIAL,Gradio,true,0,https://www.gradio.app/
 Infrastructure & Tools,TRIAL,FastAPI,true,0,https://fastapi.tiangolo.com/
 Infrastructure & Tools,ASSESS,OpenTelemetry,true,0,https://opentelemetry.io/
 Infrastructure & Tools,ASSESS,Streamlit,true,0,https://streamlit.io/
-Infrastructure & Tools,ASSESS,Databricks Apps,true,0,https://www.databricks.com/product/databricks-apps
+Infrastructure & Tools,ADOPT,Databricks Apps,true,1,https://www.databricks.com/product/databricks-apps
 Datastores,ADOPT,Azure Blob storage,true,0,https://azure.microsoft.com/services/storage/blobs
 Datastores,ADOPT,Databricks SQL,true,0,https://www.databricks.com/product/databricks-sql
 Datastores,ADOPT,MS SharePoint,true,0,https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration
 Datastores,ADOPT,Azure AI Search,true,0,https://learn.microsoft.com/en-us/azure/search
-Datastores,TRIAL,Azure SQL Database,true,0,https://azure.microsoft.com/services/sql-database
+Datastores,ADOPT,Azure SQL Database,true,1,https://azure.microsoft.com/services/sql-database
 Datastores,TRIAL,ChromaDB,true,0,https://www.trychroma.com
 Datastores,ASSESS,Azure File Sync,true,0,https://learn.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
 Data Management,ADOPT,Databricks,true,0,https://www.databricks.com/
 Data Management,ADOPT,Tableau,true,0,https://www.tableau.com/
-Data Management,ADOPT,Azure Purview,true,1,https://azure.microsoft.com/en-us/products/purview
+Data Management,HOLD,Azure Purview,true,1,https://azure.microsoft.com/en-us/products/purview
 Data Management,ADOPT,Unity Catalog,true,1,https://www.databricks.com/product/unity-catalog
 Data Management,TRIAL,Azure AI Foundry,true,1,https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry
 Data Management,TRIAL,Alteryx,true,0,https://www.alteryx.com/alteryx-analytics-automation-platform
 Data Management,ASSESS,Power BI,true,0,https://powerbi.microsoft.com/
-Data Management,ASSESS,Databricks AI/BI,true,0,https://www.databricks.com/product/business-intelligence
+Data Management,TRIAL,Databricks AI/BI,true,1,https://www.databricks.com/product/business-intelligence
 Data Management,ASSESS,Azure Data Explorer,true,0,https://azure.microsoft.com/services/data-explorer
 Data Management,ASSESS,Azure Data Catalog,true,0,https://azure.microsoft.com/en-us/products/data-catalog
